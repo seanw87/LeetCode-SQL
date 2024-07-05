@@ -1,4 +1,5 @@
 # Write your MySQL query statement below
+# Attention for "BIGINT UNSIGNED value is out of range" error in Mysql
 select DISTINCT num as ConsecutiveNums
 from (
     select num, id_offset, count(1) as cnt
