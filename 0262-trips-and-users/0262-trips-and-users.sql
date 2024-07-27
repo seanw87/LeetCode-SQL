@@ -1,4 +1,6 @@
 # Write your MySQL query statement below
+
+# push down the predicate(where b.banned...)
 select request_at as Day, round(sum(if(`status`="cancelled_by_driver" or `status`="cancelled_by_client", 1, 0))/sum(1), 2) as `Cancellation Rate`
 from (
     select a.`status`, a.request_at, b.banned as client_banned, c.banned as driver_banned
